@@ -1,52 +1,74 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "lists.h"
 
 /**
- * reverse - returns the reversed copy of a list
- * @head: pointer to the head node
- * Return: new head
-*/
-listint_t *reverse(listint_t *head)
+ * list_reverse - function in C that checks
+ * if a singly linked list is a palindrome
+ * @head: pointer to the first node
+ * Return: pointer to the new node first node
+ */
+void list_reverse(listint_t **head)
 {
-	listint_t *new_head = NULL, *temp;
+	listint_t *old = NULL;
+	listint_t *curr = *head;
+	listint_t *next = NULL;
 
-	if (head == NULL)
+	while (curr)
 	{
-		return (NULL);
+		next = curr->next;
+		curr->next = old;
+		old = curr;
+		curr = next;
 	}
-	while (head != NULL)
-	{
-		temp = (listint_t *) malloc(sizeof(listint_t));
-		if (temp == NULL)
-			return (NULL);
-		temp->n = head->n;
-		temp->next = new_head;
-		new_head = temp;
-		head = head->next;
-	}
-	return (new_head);
+
+	*head = old;
 }
+
 /**
- * is_palindrome - checks if a linked list is a palidrome
- * @head: pointer to the head node
- * Return: 0 if it is not a palindrome, 1 if it is a palindrome
-*/
+ * is_palindrome - frunction in C that checks if a
+ * linked list is a palindrome
+ * @head: double pointer to the linked list
+ * Return: returns (1) if true and (0) if not
+ */
 
 int is_palindrome(listint_t **head)
 {
-	listint_t *reverse_copy;
+	listint_t *tmp = *head, *dub = NULL;
+	listint_t *slow = *head, *fast = *head;
 
-	if (*head == NULL)
+	if (*head == NULL || (*head)->next == NULL)
 		return (1);
 
-	reverse_copy = reverse(*head);
-	while (*head && reverse_copy)
+	while (1)
 	{
-		if ((*head)->n != reverse_copy->n)
-			return (0);
-		*head = (*head)->next;
-		reverse_copy = reverse_copy->next;
+		fast = fast->next->next;
+		if (!fast)
+		{
+			dub = slow->next;
+			break;
+		}
+		if (!fast->next)
+		{
+			dub = slow->next->next;
+			break;
+		}
+		slow = slow->next;
 	}
-	return (1);
+
+	list_reverse(&dub);
+
+	while (dub && tmp)
+	{
+		if (tmp->n == dub->n)
+		{
+			dub = dub->next;
+			tmp = tmp->next;
+		}
+		else
+			return (0);
+	}
+
+	if (!dub)
+		return (1);
+
+	return (0);
 }
