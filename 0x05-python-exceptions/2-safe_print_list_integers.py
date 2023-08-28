@@ -1,5 +1,4 @@
-#!/usr/bin/python3
-safe_print_list_integers(my_list=[], x=0):
+afe_print_list_integers(my_list=[], x=0):
     counter = 0
 
     for index in range(x):
