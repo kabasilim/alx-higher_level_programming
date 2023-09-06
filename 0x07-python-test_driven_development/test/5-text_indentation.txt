@@ -1,0 +1,46 @@
+Test cases for ``Text Indentation`` module
+
+============================
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+    >>> text_indentation("Hello: My name is Sarah. What is your name?")
+    Hello:
+    <BLANKLINE>
+    My name is Sarah.
+    <BLANKLINE>
+    What is your name?
+    <BLANKLINE>
+
+    >>> text_indentation("Hey")
+    Hey
+
+    >>> text_indentation("Hello\n world")
+    Hello
+    world
+
+    >>> text_indentation("          ")
+
+
+    >>> text_indentation('Hello?.world')
+    Hello?
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    world
+
+    >>> text_indentation('Hello      .        world.')
+    Hello      .
+    <BLANKLINE>
+    world.
+    <BLANKLINE>
+
+    >>> text_indentation("\t\tHello  \n  world.")
+    Hello
+    world.
+    <BLANKLINE>
+
+    >>> text_indentation(3)
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
