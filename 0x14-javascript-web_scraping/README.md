@@ -38,8 +38,9 @@ $ sudo apt-get install -y nodejs
 ```
 ### Install semi-standard
 <a href="https://github.com/standard/semistandard">Documentation</a>
-
-``$ sudo npm install semistandard --global``
+```
+$ sudo npm install semistandard --global
+```
 ### Install ``request`` module and use it
 <a href="https://github.com/request/request">Documentation</a>
 ```
