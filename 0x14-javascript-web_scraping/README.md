@@ -197,7 +197,7 @@ Write a script that prints all characters of a Star Wars movie:
 
 - The first argument is the Movie ID - example: ``3`` = “Return of the Jedi”
 - Display one character name by line <b>in the same order of the list “characters” in the ``/films/`` response</b>
-- You must use the <a href=="https://swapi-api.alx-tools.com/">Star wars API</a>
+- You must use the <a href="https://swapi-api.alx-tools.com/">Star wars API</a>
 - You must use the module ``request``
 ```
 guillaume@ubuntu:~/0x14$ ./101-starwars_characters.js 3
