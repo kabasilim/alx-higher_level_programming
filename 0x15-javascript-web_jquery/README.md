@@ -1,11 +1,12 @@
 # Javascript web jquery
 
-####cConcepts
+#### Concepts
 <i>For this project, we expect you to look at these concepts:</i>
 
 - <a href="https://intranet.alxswe.com/concepts/3">JavaScript in the browser</a>
 - <a href="https://intranet.alxswe.com/concepts/35">Dealing with data statically versus dynamically</a>
 
+![image](https://github.com/kabasilim/alx-higher_level_programming/assets/77329878/d38611c9-c8da-4d1d-b875-31ee7edac3b8)
 
 ## Resources
 <b>Read or watch:</b>
@@ -60,6 +61,8 @@ At the end of this project, you are expected to be able to <a href="https://fs.b
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 </head>
 ```
+
+![image](https://github.com/kabasilim/alx-higher_level_programming/assets/77329878/d6885ccd-591d-4149-80eb-a2f0dd5631f4)
 
 ### Tasks
 0. No JQuery --->>> Write a JavaScript script that updates the text color of the ``<header>`` element to red ``(#FF0000):``
